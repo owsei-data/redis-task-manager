@@ -47,3 +47,13 @@ def deletar_tarefa(id_tarefa): #func del tarefa
         return None #nao existe
     r.delete(chave)
     return True
+
+def mostrar_tarefas():
+    chaves = r.keys('task:*')
+    tarefas = []
+    for key in chaves:
+        tarefa = r.hgetall(key)
+        tarefa['id'] = key.split(':')[1] #splitando o formato f'task:{id_tarefa}'
+        tarefas.append(tarefa)
+    return  tarefas
+

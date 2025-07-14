@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Redis Task Manager</title>
+    <meta name = 'viewport' content ='width=device-width, initial-scale=1.0'>
+    <link rel="stylesheet" href="../static/styles/style.css">
 </head>
 <body>
+
+    <header class="header">
+        <h1 class="header-titulo">Redis task Manager</h1>
+        <button class="botao-criar-tarefa" onclick="mostrarFormulario()">+ Nova tarefa</button>
+    </header>
+    <div id="formulario-tarefa" style="display:none;">
+        <input type="text" id="titulo" placeholder="Título">
+        <textarea id="descricao" placeholder="Descrição"></textarea>
+        <input type="date" id="deadline">
+        <button onclick="criarTarefa()">Salvar Tarefa</button>
+    </div>
+    <div class="caixa-todas-tarefas">
+        {% for tarefa in tarefas %} <!-- usando jinja-->
+            <div class="tarefa-card">
+                <h3>{{ tarefa.titulo }}</h3>
+                <p>{{ tarefa.descricao }}</p>
+                <p>Status: {{ tarefa.status }}</p>
+                <p>Prazo: {{ tarefa.deadline }}</p>
+            </div>
+        {% endfor %}
+    </div>
     <div>calendario pras datas das tarefas</div>
     <div>botao de add tarefas</div>
     <div>box com todas as tarefas (pendente)</div>
     <div>box-1 tarefa in progress</div>
     <div>box-2 tarefa done</div>
-    
+
+    <script src="{{ url_for('static', filename='scripts/task.js') }}"></script>
 </body>
 </html>
