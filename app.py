@@ -1,4 +1,5 @@
 from app import criar_app
+import os
 
 app = criar_app
 
