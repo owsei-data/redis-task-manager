@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template as rt #renderizar o html
+import os
 
 app = Flask(__name__)
 
