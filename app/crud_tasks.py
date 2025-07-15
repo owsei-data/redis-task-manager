@@ -12,7 +12,7 @@ colecao_tarefa = db['tarefas'] #tabela
 #func crud para tarefas
 
 #C - create
-def criar_tarefa(titulo,descricao,deadline,status = 'Pendente'):
+def criar_tarefa(titulo,descricao,deadline,status = 'Pendente'): #criar futuramente a conexao entre usuario e task
     data_criacao = dt.datetime.now().strftime('%d-%m-%y')
     tarefa ={ #dicionario
         'titulo' : titulo,
