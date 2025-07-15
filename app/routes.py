@@ -1,4 +1,4 @@
-from flask import blueprints, render_template
+from flask import Blueprint, render_template
 
 bp = Blueprint('route', __name__) #cria a bp
 
