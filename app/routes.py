@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-bp = Blueprint('route', __name__) #cria a bp
+bp = Blueprint('route', __name__, template_folder='../templates') #cria a bp
 
 #rota raiz
 @bp.route('/')
