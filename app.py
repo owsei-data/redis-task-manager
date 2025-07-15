@@ -1,7 +1,7 @@
 from app import criar_app
 import os
 
-app = criar_app
+app = criar_app()
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))  #porta railway
